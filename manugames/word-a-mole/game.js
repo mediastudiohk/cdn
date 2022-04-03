@@ -338,7 +338,6 @@ const Levels = [
   {hole_cnt:6, find:25},
 ];
 
-var Sound_arr=[];
 var snd_true = loadSound(PATH+"snd_true.wav");
 var snd_false = loadSound(PATH+"snd_false.wav");
 var snd_win = loadSound(PATH+"snd_win.wav");
