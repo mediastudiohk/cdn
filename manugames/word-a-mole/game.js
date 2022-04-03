@@ -339,10 +339,10 @@ const Levels = [
 ];
 
 var Sound_arr=[];
-var snd_true = loadSound("snd_true.wav");
-var snd_false = loadSound("snd_false.wav");
-var snd_win = loadSound("snd_win.wav");
-var music1 = loadSound("music1.mp3");
+var snd_true = loadSound(PATH+"snd_true.wav");
+var snd_false = loadSound(PATH+"snd_false.wav");
+var snd_win = loadSound(PATH+"snd_win.wav");
+var music1 = loadSound(PATH+"music1.mp3");
 
 var Img_arr=[];
 var img = {
