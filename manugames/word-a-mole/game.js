@@ -357,7 +357,7 @@ var img = {
   main_bg:newImage('main_bg.png'),
   times_up:newImage('times_up.png'),
   hole_top:newImage('hole_top.png'),
-  text_box:newImage('text_box_2-01.png'),
+  text_box:newImage('text_box.png'),
   s_true:newImage('s_true.png'),
   s_false:newImage('s_false.png'),
 
@@ -365,7 +365,7 @@ var img = {
   btn_sound_off:newImage('btn_sound_off.png'),
   btn_sound_on:newImage('btn_sound_on.png'),
 
-  hog:[newImage('hog1'), newImage('hog2.png'), newImage('hog3.png')],
+  hog:[newImage('hog1.png'), newImage('hog2.png'), newImage('hog3.png')],
   hole:[newImage('hole1.png'), newImage('hole2.png'), newImage('hole3.png'), newImage('hole4.png'), newImage('hole5.png')],
 };
 
