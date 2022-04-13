@@ -43,7 +43,7 @@ const G = {
     G.life=5;
     G.state='start';
     G.state_end='idle';
-    if(G.sound) playMusic(music1);
+    if(G.sound) {stopSound(music1); playMusic(music1);}
   }
   ,LoadLevel(l){
     var b=[], c=[], m=[],x,y,v;
