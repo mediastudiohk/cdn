@@ -16,7 +16,7 @@ function resizeCan(){
 window.onresize = resizeCan;
 
 can.addEventListener("mousemove", function () { Mouse.MouseMove(event, false) }, !1);
-can.addEventListener("mousedown", function () { Mouse.MouseClick(event) }, !1)
+can.addEventListener("mousedown", function () { Mouse.MouseClick(event) }, !1);
 can.addEventListener("mouseup", function () { Mouse.MouseClick(event) }, !1);
 /* Touches */can.addEventListener("touchmove", function () { Mouse.TouchMove(event, true); if (!sys.MScolling) event.preventDefault();}, !1);
 /* Touches */can.addEventListener("touchstart", function () { Mouse.TouchMove(event,true); Mouse.TouchClick(); event.preventDefault(); }, !1);
@@ -76,7 +76,7 @@ const G = {
     var mld = Mouse.Down('Left'), w2=W/2;
     G.draw.top_bar();
     ctx.fillStyle = '#1e174e'; ctx.fillText('Action Left: '+Q.action_left,40,85);
-    ctx.textAlign = "center"; ctx.fillText(Months[Q.round_i],w2,85);
+    ctx.textAlign = "center"; ctx.fillText('Month: '+(Q.round_i+1),w2,85);
 
     if(G.popup){
       ctx.textAlign = "center"; ctx.textBaseline = "middle";
@@ -140,7 +140,7 @@ const G = {
     G.draw.top_bar();
     ctx.fillStyle = '#1e174e'; ctx.textAlign = "center";
     ctx.fillText('New month',w2,100);
-    ctx.fillText('You were given 200$ of pocket money',w2,200);
+    ctx.fillText('You given 200$ of pocket money',w2,200);
     ctx.fillText('Your happiness decreased by -5%',w2,250);
     ctx.fillText('Your relationships decreased by -5%',w2,300);
     if(DrawBtn(W/2,430,330,100,img.confirm) && mld){
@@ -164,7 +164,7 @@ const G = {
       this.card(
         {   x:x, y:y, m:img.symbol.a1[c.i]
           , title:['Shopping and buying',tx1,'']
-          , tb1:{c:'red',txt:'Money -250$'}
+          , tb1:{c:'red',txt:'Money -'+Math.floor(250*(1+0.05*Q.round_i))+'$'}
           , tb2:{c:'#054da2',txt:'Relationships +40%'}
           , tb3:{c:'#054da2',txt:'Happiness +40%'}
           , active:c.active
@@ -176,7 +176,7 @@ const G = {
       this.card(
         {   x:x, y:y, m:img.symbol.a2[c.i]
           , title:[tx1,'with friends','']
-          , tb1:{c:'red',txt:'Money -150$'}
+          , tb1:{c:'red',txt:'Money -'+Math.floor(150*(1+0.05*Q.round_i))+'$'}
           , tb2:{c:'#054da2',txt:'Relationships +15%'}
           , tb3:{c:'#054da2',txt:'Happiness +15%'}
           , active:c.active
@@ -219,7 +219,7 @@ const G = {
         {   x:x, y:y, m:img.symbol.a6
           , title:['Reading & Research','about Investing','']
           , tb1:{c:'red',txt:''}
-          , tb2:{c:'#054da2',txt:'Investing Return +5%'}
+          , tb2:{c:'#054da2',txt:'Investing Money +5%'}
           , tb3:{c:'#054da2',txt:''}
           , active:c.active
         });
@@ -359,8 +359,8 @@ const Q = {
     G.popup=false;
   }
   ,action_after_active:{
-    a1(){Q.money-=250; Q.relationships+=40; Q.repeat.a1++;},
-    a2(){Q.money-=150; Q.happiness+=15; Q.relationships+=15; Q.repeat.a2++;},
+    a1(){Q.money-=Math.floor(250*(1+0.05*Q.round_i)); Q.happiness+=40; Q.relationships+=40; Q.repeat.a1++;},
+    a2(){Q.money-=Math.floor(150*(1+0.05*Q.round_i)); Q.happiness+=15; Q.relationships+=15; Q.repeat.a2++;},
     a3(){Q.happiness+=5; Q.relationships+=15; Q.repeat.a3++;},
     a4(){Q.happiness+=10; Q.relationships+=10; Q.repeat.a4++;},
     a5(){
@@ -443,20 +443,6 @@ const Q = {
   }
 }
 
-const Months=[
-  "January",
-  "Feburary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-]
 
 var Sound_arr=[];
 var snd_true = loadSound(PATH+"snd_true.wav");
