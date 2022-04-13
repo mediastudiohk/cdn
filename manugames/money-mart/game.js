@@ -54,7 +54,7 @@ const G = {
       if(G.sound) playMusic(music1);
       else stopSound(music1);
     }
-    mctx.fillStyle = 'Black';
+    mctx.fillStyle = '#0000c1';
     mctx.fillRect(0,0,cw,ch);
     mctx.drawImage(can2,cx,cy);
   }
