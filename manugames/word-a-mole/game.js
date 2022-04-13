@@ -28,7 +28,7 @@ const G = {
   ,newGame(i){
     G.score = 0; sy=400;
     G.loadLevel(i);
-	if(G.sound) playMusic(music1);
+    if(G.sound) {stopSound(music1); playMusic(music1);}
   }
   ,loadLevel(i){
     G.lvl=i;
