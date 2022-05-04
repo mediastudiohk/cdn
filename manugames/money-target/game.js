@@ -153,13 +153,13 @@ const G = {
       if(o.win) G.nextLevel();
       else G.set_game_end();
     }
-    //ctx.textAlign = "center"; ctx.fillText("Money: "+score+"$",W/2,10);
+    //ctx.textAlign = "center"; ctx.fillText("Money: $"+score,W/2,10);
     ctx.textAlign = "center";  ctx.fillStyle = "#000"; ctx.textBaseline = "top"; ctx.font = "bold 30px font1";
     ctx.fillText(G.get_time(Math.floor(time)),x,y+60);
-    ctx.fillText("Level Reward: "+o.level_reward+'$',x,y+150);
-    ctx.fillText("Time Interest: "+o.time_interest+'$',x,y+150+40);
-    ctx.fillStyle = "red"; ctx.fillText("Item Cost: "+o.item_cost+'$',x,y+150+40*2);
-    ctx.fillStyle = "#000"; ctx.fillText("Total money: "+money+'$',x,y+150+40*3);
+    ctx.fillText("Level Reward: $"+o.level_reward,x,y+150);
+    ctx.fillText("Time Interest: $"+o.time_interest,x,y+150+40);
+    ctx.fillStyle = "red"; ctx.fillText("Item Cost: $"+o.item_cost,x,y+150+40*2);
+    ctx.fillStyle = "#000"; ctx.fillText("Total money: $"+money,x,y+150+40*3);
     if(!o.win){ ctx.fillStyle = "red"; ctx.fillText("There isn't enough money to buy",x,y+150+40*4);}
 
 
@@ -190,7 +190,7 @@ const G = {
     else {
       if(DrawBtn(w2, 420, 300, 100,img.btn_play_again) && Mouse.Down('Left')) G.newGame(0);
       ctx.textAlign = "center";  ctx.fillStyle = "#000"; ctx.textBaseline = "top"; ctx.font = "bold 30px font1";
-      ctx.fillText("Total money: "+money+'$',w2, 20);
+      ctx.fillText("Total money: $"+money,w2, 20);
     }
   }
   ,set_game_end(){
@@ -339,7 +339,7 @@ const Prize_Box = {
     var t=this, w=t.w, w2=w/2, o=o_check_win;
     if(!t.active){
       ctx.drawImage(img.money_target,700,80);
-      ctx.textAlign = "center";  ctx.fillStyle = "#000"; ctx.fillText(lvl.item_cost+'$',850,140);
+      ctx.textAlign = "center";  ctx.fillStyle = "#000"; ctx.fillText('$'+lvl.item_cost,850,140);
 
       if(time<=120)ctx.drawImage(img['prize_box'+(lvl_i+1)],t.x-w2,t.y-w2,w,w);
     }
