@@ -444,7 +444,7 @@ var o_power={
     var t=tab,x1,y1;
     for(y1 = -1; y1 <= 1; y1++){
       for(x1 = -1; x1 <= 1; x1++){
-        if(G.isInside(x+x1,y+y1)) t[y+y1][x+x1].crush(x+x1,y+x1);
+        if(G.isInside(x+x1,y+y1)) t[y+y1][x+x1].crush(x+x1,y+y1);
       }
     }
     G.state2='crush'; G.time=10;
@@ -491,7 +491,7 @@ var o_power={
     var t=tab,x1,y1;
     for(y1 = -2; y1 <= 2; y1++){
       for(x1 = -2; x1 <= 2; x1++){
-        if(G.isInside(x+x1,y+y1)) t[y+y1][x+x1].crush(x+x1,y+x1);
+        if(G.isInside(x+x1,y+y1)) t[y+y1][x+x1].crush(x+x1,y+y1);
       }
     }
     G.state2='crush'; G.time=10;
